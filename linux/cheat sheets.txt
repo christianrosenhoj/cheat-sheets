@@ -261,3 +261,36 @@ General:
 •	Cat > file.extension << EOF
 >text
 >EOF
+-----------------
+Virtualbox:
+Host only:192.168.56.1
+	  255.255.255.0
+	  
+	  
+	  
+#disable selinux
+
+ sudo vi /etc/sysconfig/selinux
+ 			This file controls the state of SELinux on the system.
+ 			SELINUX= can take one of these three values:
+   			 enforcing - SELinux security policy is enforced.
+   			  permissive - SELinux prints warnings instead of enforcing.
+    			 disabled - No SELinux policy is loaded.
+SELINUX=disabled
+ 			SELINUXTYPE= can take one of these two values:
+    			 targeted - Targeted processes are protected,
+   	  mls - Multi Level Security protection.
+		SELINUXTYPE=targeted
+
+sudo setenforce 0
+
+sudo getenforce (=> permissive)
+
+
+
+cd /tmp
+wget https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm
+ls *.rpm
+
+sudo yum install epel-release-7-2.noarch.rpm
+
