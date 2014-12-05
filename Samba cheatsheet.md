@@ -18,7 +18,7 @@
 
 | :---                                    | :---                                       |
 |Locatie samba conf.- see `Samba share configuration parameters` |  `/etc/samba/smb.conf`|
-|  test        | test|
+
 
 |[sharename]|x|
 |    x   |comment = string of anything really|
