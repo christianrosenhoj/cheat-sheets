@@ -34,7 +34,7 @@
 |Maximum permission for directory (deny world)|`directory mode = 0770`|
 | Maximum conntections to a share at any given time| `max connections = 10 `| 
 
-|Sources||
+|Sources|
 |:---|
 |`https://www.samba.org/samba/docs/using_samba/ch09.html`|
 
