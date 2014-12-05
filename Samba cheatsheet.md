@@ -4,12 +4,15 @@
 ###Samba###
 | Actie                                  | Command                                    |
 | :---                                    | :---                                       |
-|Locatie samba conf. |  `/etc/samba/smb.conf`|
+|Locatie samba conf.- see `Samba share configuration parameters` |  `/etc/samba/smb.conf`|
 |SAMBA service| `smbd`| 
-|SAMBA starts on boot| `/etc/init.d/smbd`
+|SAMBA starts on boot| `/etc/init.d/smbd` `chkconfig smb on` |
 |NetBios nameserver service | `nmbd.service`|
 |NetBios poorten| `137``138``139`|
 |Samba service RUNNING and LISTENING|`netstat -ntl | grep portnumber` |
+|Add user| `smbpasswd -a username`|
+|Enable user| `smbpasswd -e username`|
+|Show users/groups| `getent passwd` `getent group`|
 
 ###Samba share configuration parameters###
 | :---                                    | :---                                       |
@@ -23,6 +26,7 @@
 |  Valid users for the share    |valid users = @group|
 | User read permissions    |read-list|
 | Disallow anyone to read share   |browseable = no|
+| Allows writing| `writeable=yes`|
 
 ### Tools
 * `yum install setroubleshoot`, gevolgd door: `service auditd restart`
