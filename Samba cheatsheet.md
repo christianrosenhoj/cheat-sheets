@@ -17,11 +17,11 @@
 ###Samba share configuration parameters###
 | :---                                    | :---                                       |
 |[sharename]|x|
-|       |comment = string of anything really|
+|    x   |comment = string of anything really|
 |   Location of share     |path = /srv/share/sharename|
-|       |read only = yes|
-|        |guest ok = yes|
-|       | guest only = yes|
+|   x    |read only = yes|
+|    x    |guest ok = yes|
+|   x    | guest only = yes|
 |  User write permissions    |write-list=@group|
 |  Valid users for the share    |valid users = @group|
 | User read permissions    |read-list|
