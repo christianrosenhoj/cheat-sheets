@@ -16,19 +16,18 @@
 
 ###Samba share configuration parameters###
 
-| Actie                                  | Command                                    |
+| Explanation                                | Parameter                                  |
 | :---                                    | :---                                       |
-|Locatie samba conf.- see `Samba share configuration parameters` |  `/etc/samba/smb.conf`|
-|[sharename]|x|
-|    x   |comment = string of anything really|
-|   Location of share     |path = /srv/share/sharename|
-|   x    |read only = yes|
-|    x    |guest ok = yes|
-|   x    | guest only = yes|
-|  User write permissions    |write-list=@group|
-|  Valid users for the share    |valid users = @group|
-| User read permissions    |read-list|
-| Disallow anyone to read share   |browseable = no|
+|[sharename]||
+|       |`comment = string of anything really`|
+|   Location of share     |`path = /srv/share/sharename`|
+|      |`read only = yes`|
+|       |`guest ok = yes`|
+|   x    |`guest only = yes`|
+|  User write permissions    |`write-list=@group`|
+|  Valid users for the share    |`valid users = @group`|
+| User read permissions    |`read-list = @group`|
+| Disallow anyone to read share  |`browseable = no`|
 | Allows writing| `writeable=yes`|
 
 ### Tools
