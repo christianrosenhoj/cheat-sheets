@@ -17,7 +17,7 @@
 ###Samba share configuration parameters###
 
 | :---                                    | :---                                       |
-|    | test|
+|  test  | test|
 
 |[sharename]|x|
 |    x   |comment = string of anything really|
