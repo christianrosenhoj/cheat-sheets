@@ -2,7 +2,7 @@
 
 
 ###Samba###
-| Actie                                  | Command                                    |
+| Action                                 | Command                                    |
 | :---                                    | :---                                       |
 |Locatie samba conf.- see `Samba share configuration parameters` |  `/etc/samba/smb.conf`|
 |SAMBA service| `smbd`| 
@@ -14,6 +14,9 @@
 |Enable user| `smbpasswd -e username`|
 |Show users/groups| `getent passwd` `getent group`|
 |Test config| `testparm`|
+|Change file/dir permissions - user - group - others - r= 4 w = 2 x = 1| `chmod 740 filename`|
+|Change owner of file|`chown username groupname filename`|
+
 ###Samba share configuration parameters(ACL)###
 
 | Explanation                                | Parameter                                  |
@@ -34,9 +37,32 @@
 |Maximum permission for directory (deny world)|`directory mode = 0770`|
 | Maximum conntections to a share at any given time| `max connections = 10 `| 
 
-|Sources||
+###Samba- Selinux booleans###
+| Explanation                                | Boolean                                  |
+| :---                                    | :---                                       |
+|setsebool boolean [0,1]||
+|Export nts/fusefs volumes|`samba_share_fusefs`|
+|File/dir read only|`samba_export_all_ro`|
+|File/dir read/write|`samba_export_all_rw`|
+|Create home dirs| `samba_create_home_dirs`| 
+|Share user home dirs| `samba_enable_home_dirs`| 
+|Support home dirs| `samba_use_home_dirs`|
+|Run unconfined scripts| `samba_run_unconfined`|
+|Run as domain controller| `samba_domain_controller`|
+|Run as portmapper| `samba_portmapper`|
+|Allow modify public files - `labeled public_content_rw_t`|  `allow_smbd_anon_write`|
+
+
+
+
+
+
+|Sources|Url|
 |:---|:---|
 |Users and security - In depth|`https://www.samba.org/samba/docs/using_samba/ch09.html`|
+|Create users| `http://blog.sven.co.za/2010/06/02/samba-cheat-sheet-ubuntu/`|
+|Basic info| `http://blog.sven.co.za/2010/06/02/samba-cheat-sheet-ubuntu/`|
+|Ports, protocols and daemons - outdated iptables - use firewalld| `http://troy.jdmz.net/samba/fw/`|
 
 ### Tools
 * `yum install setroubleshoot`, gevolgd door: `service auditd restart`
@@ -52,18 +78,24 @@
 
 ###SELinux ###
 
-| Actie                                  | Command                                    |
+| Action                                  | Command                                    |
 | :---                                    | :---                                       |
-| Status controleren                | `sestatus` |
-| Herstellen initiële SELinux-settings| `restorecon -R -v [target-folder]`(bijv. /var/www) |
-| In de logs controleren op output van setroubleshoot | `grep setroubleshoot /var/log/messages` |
-| Config files SELinux | `/etc/selinux/config `                         |
-| Labeling controleren (optie -Z) | `ls -lZ [/usr/sbin/httpd]`                       |
+| Is installed| `check-selinux-installation`| 
+| Status            | `sestatus` |
+| Enable selinux/get selinux|`setenforce 1` `getenforce`|
 | Change context | `chcon` |
-| Booleans opvragen | `getsebool | grep X`) |
-| Booleans instellen| `setsebool [0|1]`  |
-| (na install setroubleshoot) | `sudo sealert -l [de opgegeven code]` |
-| Grafische tool| `sudo system-config-selinux` |
+|Restore default SELinux settings|`restorecon /etc/hosts `|
+|Restore label| `restorecon -R /srv/web`| 
+| List allowed ports|`semanage port -l `| 
+|List all security policy modules| `semodule -l `|
+| Fix incorrect labels| `fixfiles relabel`| 
+| Config files SELinux | `/etc/selinux/config `  |
+| Booleans get  | `getsebool | grep X`) |
+| Booleans set| `setsebool [0|1]`  |
+| Graphic tool| `sudo system-config-selinux` |
+|Add new user| `semanage login -a -s group user` `chcon -R -u group -r group /home/user`|
+|Troubleshoot|`setroubleshoot` |
+|Troubleshoot daemon| `setroubleshootd`|
 
 
 ###Nuttige config files###
