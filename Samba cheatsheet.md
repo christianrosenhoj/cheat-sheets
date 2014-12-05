@@ -14,7 +14,7 @@
 |Enable user| `smbpasswd -e username`|
 |Show users/groups| `getent passwd` `getent group`|
 |Test config| `testparm`|
-|Change file/dir permissions - user - group - others - r= 4 w = 2 x = 1| `chmod 740 filename`|
+|Change file/dir permissions - user - group - others - r= 4 w = 2 x = 1| `chmod 740 filename` or `chmod u+rwx, g-rwx,o+rwx filename`|
 |Change owner of file|`chown username groupname filename`|
 
 ###Samba share configuration parameters(ACL)###
