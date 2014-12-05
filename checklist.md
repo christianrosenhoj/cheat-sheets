@@ -8,3 +8,4 @@
 |			| Users - created and configured
 |			| Samba conf (smb.conf) configured
 |			| SELinux configured (getsebool: samba_enable_home_dirs, samba_export_all_rw)
+|     | Other security settings are enabled and configured (firewalld)
