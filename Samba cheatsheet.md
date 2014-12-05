@@ -17,6 +17,7 @@
 ###Samba share configuration parameters###
 
 | :---                                    | :---                                       |
+|Locatie samba conf.- see `Samba share configuration parameters` |  `/etc/samba/smb.conf`|
 |  test        | test|
 
 |[sharename]|x|
