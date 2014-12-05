@@ -1,4 +1,4 @@
-### Samba_cheatsheet
+### Samba cheatsheet
 
 
 ###Samba###
