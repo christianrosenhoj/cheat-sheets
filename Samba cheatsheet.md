@@ -4,7 +4,7 @@
 ###Samba###
 | Actie                                  | Command                                    |
 | :---                                    | :---                                       |
-|Locatie samba conf. |  '/etc/samba/smb.conf'|
+|Locatie samba conf. |  `/etc/samba/smb.conf`|
 
 ### Tools
 * `yum install setroubleshoot`, gevolgd door: `service auditd restart`
