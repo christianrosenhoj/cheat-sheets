@@ -11,7 +11,7 @@
 |NetBios poorten| `137``138``139`|
 
 ###Samba example share###
-[export]
+|[export]|
         comment = All kinds of exports
         path = /export
         read only = yes
