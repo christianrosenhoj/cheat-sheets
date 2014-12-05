@@ -5,6 +5,9 @@
 | Actie                                  | Command                                    |
 | :---                                    | :---                                       |
 |Locatie samba conf. |  `/etc/samba/smb.conf`|
+|NetBios nameserver service | `nmbd.service`|
+|NetBios poorten| `137``138``139`|
+
 
 ### Tools
 * `yum install setroubleshoot`, gevolgd door: `service auditd restart`
