@@ -4,7 +4,7 @@
 ###Samba###
 | Action                                 | Command                                    |
 | :---                                    | :---                                       |
-|Locatie samba conf.- see `Samba share configuration parameters` |  `/etc/samba/smb.conf`|
+|Location samba conf.- see `Samba share configuration parameters` |  `/etc/samba/smb.conf`|
 |SAMBA service| `smbd`| 
 |SAMBA starts on boot| `/etc/init.d/smbd` `chkconfig smb on` |
 |NetBios nameserver service | `nmbd.service`|
