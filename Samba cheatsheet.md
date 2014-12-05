@@ -36,7 +36,7 @@
 
 |Sources||
 |:---|
-|https://www.samba.org/samba/docs/using_samba/ch09.html|
+|`https://www.samba.org/samba/docs/using_samba/ch09.html`|
 
 ### Tools
 * `yum install setroubleshoot`, gevolgd door: `service auditd restart`
