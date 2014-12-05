@@ -34,3 +34,7 @@
 |Run as domain controller| `samba_domain_controller`|
 |Run as portmapper| `samba_portmapper`|
 |Allow modify public files - `labeled public_content_rw_t`|  `allow_smbd_anon_write`|
+
+|Man page|
+|:---|
+|http://linux.die.net/man/8/setsebool|
