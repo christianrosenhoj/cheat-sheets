@@ -9,7 +9,7 @@
 |SAMBA starts on boot| `/etc/init.d/smbd`
 |NetBios nameserver service | `nmbd.service`|
 |NetBios poorten| `137``138``139`|
-|Samba service RUNNING and LISTENING|`netstat -nt1 | grep portnumber` |
+|Samba service RUNNING and LISTENING|`netstat -ntl | grep portnumber` |
 
 ###Samba share configuration parameters###
 | :---                                    | :---                                       |
