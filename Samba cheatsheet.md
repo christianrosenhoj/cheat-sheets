@@ -15,7 +15,10 @@
 |Show users/groups| `getent passwd` `getent group`|
 
 ###Samba share configuration parameters###
+
 | :---                                    | :---                                       |
+|    | test|
+
 |[sharename]|x|
 |    x   |comment = string of anything really|
 |   Location of share     |path = /srv/share/sharename|
