@@ -35,7 +35,7 @@
 | Maximum conntections to a share at any given time| `max connections = 10 `| 
 
 |Sources||
-|:---||
+|:---|:---|
 |Users and security - In depth|`https://www.samba.org/samba/docs/using_samba/ch09.html`|
 
 ### Tools
