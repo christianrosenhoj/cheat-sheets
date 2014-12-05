@@ -9,14 +9,20 @@
 |SAMBA starts on boot| `/etc/init.d/smbd`
 |NetBios nameserver service | `nmbd.service`|
 |NetBios poorten| `137``138``139`|
+|Samba service RUNNING and LISTENING|`netstat -nt1 | grep portnumber` |
 
-###Samba example share###
-|[export]|
-        comment = All kinds of exports
-        path = /export
-        read only = yes
-        guest ok = yes
-        guest only = yes
+###Samba share configuration parameters###
+| :---                                    | :---                                       |
+|[sharename]|
+|       |comment = string of anything really|
+|   Location of share     |path = /srv/share/sharename|
+|       |read only = yes|
+|        |guest ok = yes|
+|       | guest only = yes|
+|  User write permissions    |write-list=@group|
+|  Valid users for the share    |valid users = @group|
+| User read permissions    |read-list|
+| Disallow anyone to read share   |browseable = no|
 
 ### Tools
 * `yum install setroubleshoot`, gevolgd door: `service auditd restart`
