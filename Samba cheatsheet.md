@@ -14,21 +14,29 @@
 |Enable user| `smbpasswd -e username`|
 |Show users/groups| `getent passwd` `getent group`|
 
-###Samba share configuration parameters###
+###Samba share configuration parameters(ACL)###
 
 | Explanation                                | Parameter                                  |
 | :---                                    | :---                                       |
 |[sharename]||
-|       |`comment = string of anything really`|
+|    Comment   |`comment = string of anything really`|
 |   Location of share     |`path = /srv/share/sharename`|
 |      |`read only = yes`|
-|       |`guest ok = yes`|
-|   x    |`guest only = yes`|
+|  Guest can access     |`guest ok = yes`|
+|   All clients connect as guest    |`guest only = yes`|
 |  User write permissions    |`write-list=@group`|
 |  Valid users for the share    |`valid users = @group`|
+| Invalid users - deny access | `invalid users =  mark betty`| 
 | User read permissions    |`read-list = @group`|
 | Disallow anyone to read share  |`browseable = no`|
 | Allows writing| `writeable=yes`|
+|Maximum permissions for a new file (deny world)|`create mode = 0660`|
+|Maximum permission for directory (deny world)|`directory mode = 0770`|
+| Maximum conntections to a share at any given time| `max connections = 10 `| 
+
+|Sources||
+|:---|
+|https://www.samba.org/samba/docs/using_samba/ch09.html|
 
 ### Tools
 * `yum install setroubleshoot`, gevolgd door: `service auditd restart`
