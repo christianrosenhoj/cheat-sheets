@@ -16,7 +16,7 @@
 
 ###Samba share configuration parameters###
 | :---                                    | :---                                       |
-|[sharename]|||
+|[sharename]|x|
 |       |comment = string of anything really|
 |   Location of share     |path = /srv/share/sharename|
 |       |read only = yes|
