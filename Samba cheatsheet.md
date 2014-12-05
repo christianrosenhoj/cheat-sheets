@@ -13,7 +13,7 @@
 |Add user| `smbpasswd -a username`|
 |Enable user| `smbpasswd -e username`|
 |Show users/groups| `getent passwd` `getent group`|
-
+|Test config| `testparm`|
 ###Samba share configuration parameters(ACL)###
 
 | Explanation                                | Parameter                                  |
@@ -34,9 +34,9 @@
 |Maximum permission for directory (deny world)|`directory mode = 0770`|
 | Maximum conntections to a share at any given time| `max connections = 10 `| 
 
-|Sources|
-|:---|
-|`https://www.samba.org/samba/docs/using_samba/ch09.html`|
+|Sources||
+|:---||
+|Users and security - In depth|`https://www.samba.org/samba/docs/using_samba/ch09.html`|
 
 ### Tools
 * `yum install setroubleshoot`, gevolgd door: `service auditd restart`
