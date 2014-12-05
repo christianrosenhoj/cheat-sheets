@@ -5,9 +5,18 @@
 | Actie                                  | Command                                    |
 | :---                                    | :---                                       |
 |Locatie samba conf. |  `/etc/samba/smb.conf`|
+|SAMBA service| `smbd`| 
+|SAMBA starts on boot| `/etc/init.d/smbd`
 |NetBios nameserver service | `nmbd.service`|
 |NetBios poorten| `137``138``139`|
 
+###Samba example share###
+[export]
+        comment = All kinds of exports
+        path = /export
+        read only = yes
+        guest ok = yes
+        guest only = yes
 
 ### Tools
 * `yum install setroubleshoot`, gevolgd door: `service auditd restart`
