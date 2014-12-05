@@ -54,67 +54,13 @@
 
 
 
-
-
-
 |Sources|Url|
 |:---|:---|
 |Users and security - In depth|`https://www.samba.org/samba/docs/using_samba/ch09.html`|
 |Create users| `http://blog.sven.co.za/2010/06/02/samba-cheat-sheet-ubuntu/`|
 |Basic info| `http://blog.sven.co.za/2010/06/02/samba-cheat-sheet-ubuntu/`|
 |Ports, protocols and daemons - outdated iptables - use firewalld| `http://troy.jdmz.net/samba/fw/`|
-
-### Tools
-* `yum install setroubleshoot`, gevolgd door: `service auditd restart`
-* `yum install xorg-x11-xauth policycoreutils-gui bitmap-fixed-fonts`
-* `yum install net-tools`
-* `repoquery -qf */netstat */lsof */nmap`
-      * Wanneer niet geïnstalleerd: `yum install yum-utils`
-* IP-conflicten opsporen: `sudo yum install arp-scan`
-<br> en 
-    `arp-scan -I eth0 -l`
-* _yum install nmap_
+|Man page|`https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html`|
 
 
-###SELinux ###
 
-| Action                                  | Command                                    |
-| :---                                    | :---                                       |
-| Is installed| `check-selinux-installation`| 
-| Status            | `sestatus` |
-| Enable selinux/get selinux|`setenforce 1` `getenforce`|
-| Change context | `chcon` |
-|Restore default SELinux settings|`restorecon /etc/hosts `|
-|Restore label| `restorecon -R /srv/web`| 
-| List allowed ports|`semanage port -l `| 
-|List all security policy modules| `semodule -l `|
-| Fix incorrect labels| `fixfiles relabel`| 
-| Config files SELinux | `/etc/selinux/config `  |
-| Booleans get  | `getsebool | grep X`) |
-| Booleans set| `setsebool [0|1]`  |
-| Graphic tool| `sudo system-config-selinux` |
-|Add new user| `semanage login -a -s group user` `chcon -R -u group -r group /home/user`|
-|Troubleshoot|`setroubleshoot` |
-|Troubleshoot daemon| `setroubleshootd`|
-
-
-###Nuttige config files###
-| Path							| Function
-| :---							| :---
-| `/etc/samba/smb.conf`			| Samba
-| `/etc/vsftpd/vsftpd.conf`		| FTP
-
-### Firewall ###
-* Firewall: /etc/sysconfig/iptables
-    * systemctl restart iptables.service
-| Action							| Function
-| :---                                    | :---                                       |
-| Currently enabled features       | `firewall-cmd --list-all-zones`                                  |
-| Enable a port in zone            | `firewall-cmd [--permanent] [--zone=ZONE] --add-port=80/tcp`     |
-
-
-### Services controleren ###
-Indien deze uitstaan, aanzetten.
-* SAMBA: 
-    * systemctl status smb.service (daemon)
-    * systemctl status nmb.service (daemon)
