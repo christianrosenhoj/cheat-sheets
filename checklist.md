@@ -3,7 +3,7 @@
 | Check		| Task
 | :--		| :--
 |			| Hardware (cable connected in Virtualbox?).
-|			| IP (does the VM network card have the correct IP config).
+|			| IP (does the VM network card have the correct IP config? Do the ip settings correspond in the actual VM?).
 |			| Services (nmbd, smbd) are enabled.
 |			| Users - created and configured
 |			| Samba conf (smb.conf) configured
