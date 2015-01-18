@@ -1,5 +1,12 @@
 ###SELinux ###
 
+##Packages
+-samba
+-samba-client
+-libsemanage-python
+
+
+
 | Action                                  | Command                                    |
 | :---                                    | :---                                       |
 | Is installed| `check-selinux-installation`| 
