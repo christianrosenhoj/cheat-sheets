@@ -1,9 +1,9 @@
 ###SELinux ###
 
-##Packages
--samba
--samba-client
--libsemanage-python
+## Packages
+-`samba`
+-`samba-client`
+-`libsemanage-python`
 
 
 
