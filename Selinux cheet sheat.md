@@ -5,10 +5,7 @@
 - `samba-client`
 - `libsemanage-python`
 
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
+
 
 
 | Action                                  | Command                                    |
